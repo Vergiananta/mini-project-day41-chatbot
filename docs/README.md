@@ -5,7 +5,7 @@ Proses ini menyiapkan knowledge base dalam PostgreSQL (pgvector) dari CSV.
 Langkah-langkah:
 
 - Siapkan file `dataset/dataset_assignment.csv`.
-- Create database customer_kb.
+- Create database `customer_kb`.
 - Jalankan `python -m src.ingest` untuk melakukan:
   - Preprocessing dan pembersihan teks.
   - Kategorisasi heuristik (jika kolom `category` tidak tersedia).
