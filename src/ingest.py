@@ -57,7 +57,6 @@ def ingest_csv(path: str = "dataset/dataset_assignment.csv"):
 
     texts = [clean_text(str(x)) for x in df[text_col].tolist()]
 
-    # Kategori dan tags
     categories = [str(x) if category_col else guess_category(t) for x, t in zip(df[category_col].tolist() if category_col else [None] * len(texts), texts)]
     all_tags = []
     if tags_col:
@@ -69,7 +68,6 @@ def ingest_csv(path: str = "dataset/dataset_assignment.csv"):
     else:
         all_tags = [extract_tags(t) for t in texts]
 
-    # Pastikan minimal 50 entries
     if len(texts) < 50:
         logger.warning(f"Hanya {len(texts)} entries. Disarankan >= 50 untuk kualitas.")
 
